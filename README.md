@@ -82,7 +82,14 @@ Annotations follow the [COCO format](https://cocodataset.org/#format-data) with 
       "id": 186,
       "width": 800,
       "height": 480,
-      "file_name": "frame_000165.tiff"
+      "file_name": "frame_000165.tiff",
+      "path": "/Data/2MPa/frame_000165.tiff",
+      "annotated": true,
+      "num_annotations": 82,
+      "metadata": {
+        "pressure": "2MPa",
+        "pressure_mpa": 2
+      }
     }
   ],
   "annotations": [
@@ -114,6 +121,15 @@ Annotations follow the [COCO format](https://cocodataset.org/#format-data) with 
 | `area` | Mask area in pixels² |
 | `bbox` | Bounding box [x_min, y_min, width, height] |
 | `iscrowd` | Always `false` (individual instances) |
+
+### Image Metadata Fields
+
+| Field | Description |
+|-------|-------------|
+| `pressure` | Operating pressure ("2MPa", "3MPa", "4MPa") |
+| `pressure_mpa` | Numeric pressure value (2, 3, or 4) |
+| `num_annotations` | Count of annotations in this image |
+| `annotated` | Always `true` for annotated images |
 
 ## Usage
 
@@ -151,6 +167,22 @@ coco = COCO('annotations.json')
 img_ids = coco.getImgIds()
 ann_ids = coco.getAnnIds(imgIds=img_ids[0])
 anns = coco.loadAnns(ann_ids)
+```
+
+### Filtering by Pressure
+
+```python
+# Filter images by pressure condition
+pressure_2mpa = [img for img in coco_data['images'] 
+                 if img['metadata']['pressure'] == '2MPa']
+pressure_3mpa = [img for img in coco_data['images'] 
+                 if img['metadata']['pressure'] == '3MPa']
+pressure_4mpa = [img for img in coco_data['images'] 
+                 if img['metadata']['pressure'] == '4MPa']
+
+print(f"2 MPa: {len(pressure_2mpa)} images")  # 86 images
+print(f"3 MPa: {len(pressure_3mpa)} images")  # 39 images
+print(f"4 MPa: {len(pressure_4mpa)} images")  # 41 images
 ```
 
 
