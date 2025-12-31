@@ -57,7 +57,7 @@ Aluminum agglomeration in solid rocket propellants significantly impacts two-pha
 ## Dataset Structure
 
 ```
-dataset/
+Data/
 ├── images/
 │   ├── 2MPa/
 │   │   └── frame_XXXXXX.tiff
