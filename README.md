@@ -16,7 +16,7 @@ Aluminum agglomeration in solid rocket propellants significantly impacts two-pha
 | Property | Value |
 |----------|-------|
 | Total Images | 166 |
-| Total Annotations | 8,160 |
+| Total Annotations | 8,109 |
 | Image Resolution | 800 × 480 pixels |
 | Image Format | TIFF |
 | Annotation Format | COCO JSON |
@@ -25,9 +25,9 @@ Aluminum agglomeration in solid rocket propellants significantly impacts two-pha
 
 | Pressure | Images | Annotations |
 |----------|--------|-------------|
-| 2 MPa | 86 | 5,830 |
-| 3 MPa | 39 | 351 |
-| 4 MPa | 41 | 1,979 |
+| 2 MPa | 86 | 5,795 |
+| 3 MPa | 39 | 350 |
+| 4 MPa | 41 | 1,964 |
 
 ## Experimental Setup
 
@@ -85,7 +85,7 @@ Annotations follow the [COCO format](https://cocodataset.org/#format-data) with 
       "file_name": "frame_000165.tiff",
       "path": "/Data/2MPa/frame_000165.tiff",
       "annotated": true,
-      "num_annotations": 82,
+      "num_annotations": 81,
       "metadata": {
         "pressure": "2MPa",
         "pressure_mpa": 2
